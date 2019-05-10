@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      Example form
+    </div>
+    <div class="card-body">
+      <form [formGroup]="feedbackForm">
+        <div class="form-row">
+          <div class="col-md">
+            <app-reactive-input [fieldId]="'userName'"
+                                [control]="feedbackForm.get('userName')">
+            </app-reactive-input>
+          </div>
+          <div class="col-md">
+            <app-reactive-input [fieldId]="'userAge'"
+                                [onInputDirective]="'numbersOnly'"
+                                [control]="feedbackForm.get('userAge')">
+            </app-reactive-input>
+          </div>
+          <div class="col-md">
+            <app-reactive-input [fieldId]="'inputForbidden'"
+                                [onInputDirective]="'inputForbidden'"
+                                [control]="feedbackForm.get('inputForbidden')">
+            </app-reactive-input>
+          </div>
+        </div>
+
+        <button class="btn btn-primary mt-2"
+                type="submit"
+                (click)="onSubmit()">
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
